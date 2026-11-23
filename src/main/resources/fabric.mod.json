@@ -1,0 +1,22 @@
+{
+	"schemaVersion": 1,
+	"id": "hookshot",
+	"version": "${version}",
+	"name": "Hookshot",
+	"description": "A Zelda-style hookshot. Fire a chain to drag items, small mobs and loose blocks to you, or sneak + use to switch modes and zip yourself to wherever the hook bites.",
+	"authors": ["You"],
+	"contact": {},
+	"license": "MIT",
+	"icon": "assets/hookshot/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": ["com.hookshot.HookshotMod"],
+		"client": ["com.hookshot.client.HookshotClient"]
+	},
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
