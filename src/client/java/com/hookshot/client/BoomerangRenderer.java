@@ -4,6 +4,7 @@ import com.hookshot.BoomerangEntity;
 import com.hookshot.HookshotMod;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
+import org.jspecify.annotations.Nullable;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.SubmitNodeCollector;
@@ -20,12 +21,11 @@ public class BoomerangRenderer extends EntityRenderer<BoomerangEntity, Boomerang
 	private static final float SPIN_DEGREES_PER_TICK = 45.0F;
 	private static final float SCALE = 0.75F;
 
-	private final ItemModelResolver itemModelResolver;
-	private final ItemStack stack = new ItemStack(HookshotMod.BOOMERANG);
+	// Created lazily on first draw (see HookshotRenderer for why).
+	@Nullable private ItemStack stack;
 
 	public BoomerangRenderer(EntityRendererProvider.Context context) {
 		super(context);
-		this.itemModelResolver = Minecraft.getInstance().getItemModelResolver();
 	}
 
 	@Override
@@ -36,6 +36,10 @@ public class BoomerangRenderer extends EntityRenderer<BoomerangEntity, Boomerang
 	@Override
 	public void extractRenderState(BoomerangEntity entity, BoomerangRenderState state, float partialTick) {
 		super.extractRenderState(entity, state, partialTick);
+		if (stack == null) {
+			stack = new ItemStack(HookshotMod.BOOMERANG);
+		}
+		ItemModelResolver itemModelResolver = Minecraft.getInstance().getItemModelResolver();
 		itemModelResolver.updateForTopItem(state.item, stack, ItemDisplayContext.FIXED, entity.level(), null, 0);
 	}
 

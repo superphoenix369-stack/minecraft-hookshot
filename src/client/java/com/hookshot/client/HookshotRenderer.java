@@ -4,6 +4,7 @@ import com.hookshot.HookshotEntity;
 import com.hookshot.HookshotMod;
 import com.mojang.blaze3d.vertex.PoseStack;
 import org.joml.Quaternionf;
+import org.jspecify.annotations.Nullable;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.SubmitNodeCollector;
@@ -30,13 +31,13 @@ public class HookshotRenderer extends EntityRenderer<HookshotEntity, HookshotRen
 	private static final float HEAD_SCALE = 0.55F;
 	private static final float QUARTER_TURN = (float) (Math.PI / 2.0);
 
-	private final ItemModelResolver itemModelResolver;
-	private final ItemStack headStack = new ItemStack(HookshotMod.HOOK_HEAD);
-	private final ItemStack linkStack = new ItemStack(HookshotMod.CHAIN_LINK);
+	// Created lazily on first draw. Renderers are constructed during the game's very first resource
+	// load, before items and the item-model system are fully ready, so touching them here would break startup.
+	@Nullable private ItemStack headStack;
+	@Nullable private ItemStack linkStack;
 
 	public HookshotRenderer(EntityRendererProvider.Context context) {
 		super(context);
-		this.itemModelResolver = Minecraft.getInstance().getItemModelResolver();
 	}
 
 	@Override
@@ -55,6 +56,11 @@ public class HookshotRenderer extends EntityRenderer<HookshotEntity, HookshotRen
 				Mth.lerp(partialTick, entity.zOld, entity.getZ()));
 		state.toHand = owner == null ? null : handPosition(owner, partialTick).subtract(hookPos);
 
+		if (headStack == null || linkStack == null) {
+			headStack = new ItemStack(HookshotMod.HOOK_HEAD);
+			linkStack = new ItemStack(HookshotMod.CHAIN_LINK);
+		}
+		ItemModelResolver itemModelResolver = Minecraft.getInstance().getItemModelResolver();
 		itemModelResolver.updateForTopItem(state.head, headStack, ItemDisplayContext.GROUND, entity.level(), null, 0);
 		itemModelResolver.updateForTopItem(state.link, linkStack, ItemDisplayContext.GROUND, entity.level(), null, 0);
 	}
