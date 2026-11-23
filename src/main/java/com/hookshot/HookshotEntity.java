@@ -400,8 +400,9 @@ public class HookshotEntity extends Projectile {
 	 */
 	private boolean tryGrabBlock(ServerLevel level, Player owner, BlockPos pos, Vec3 at) {
 		BlockState state = level.getBlockState(pos);
-		if (state.isAir() || state.hasBlockEntity() || state.is(UNGRABBABLE)
-				|| state.getPistonPushReaction() == PushReaction.BLOCK) {
+PushReaction push = state.getPistonPushReaction();
+		boolean pistonMovable = push == PushReaction.PUSH || push == PushReaction.POPPED;
+		if (state.isAir() || state.hasBlockEntity() || state.is(UNGRABBABLE) || !pistonMovable) {
 			return false;
 		}
 		float hardness = state.getDestroySpeed(level, pos);
