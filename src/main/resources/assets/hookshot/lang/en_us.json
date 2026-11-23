@@ -1,8 +1,0 @@
-{
-	"item.hookshot.hookshot": "Hookshot",
-	"item.hookshot.hook_head": "Hookshot Hook",
-	"item.hookshot.chain_link": "Hookshot Chain",
-	"entity.hookshot.hook": "Hookshot Hook",
-	"message.hookshot.mode.fetch": "Hookshot: Fetch mode (pulls things to you)",
-	"message.hookshot.mode.travel": "Hookshot: Travel mode (pulls you to the hook)"
-}

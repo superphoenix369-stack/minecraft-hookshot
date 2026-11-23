@@ -1,9 +1,0 @@
-{
-	"model": {
-		"type": "minecraft:condition",
-		"property": "minecraft:has_component",
-		"component": "hookshot:travel_mode",
-		"on_true": { "type": "minecraft:model", "model": "hookshot:item/hookshot_travel" },
-		"on_false": { "type": "minecraft:model", "model": "hookshot:item/hookshot" }
-	}
-}

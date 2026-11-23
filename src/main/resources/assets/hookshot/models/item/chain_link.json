@@ -1,7 +1,0 @@
-{
-	"parent": "minecraft:item/generated",
-	"textures": { "layer0": "hookshot:item/chain_link" },
-	"display": {
-		"ground": { "rotation": [0, 0, 0], "translation": [0, 0, 0], "scale": [1, 1, 1] }
-	}
-}
