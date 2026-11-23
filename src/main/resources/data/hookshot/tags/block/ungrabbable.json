@@ -1,0 +1,11 @@
+{
+	"replace": false,
+	"values": [
+		"#minecraft:impermeable",
+		{ "id": "#minecraft:ice", "required": false },
+		"minecraft:glass_pane",
+		{ "id": "#c:glass_panes", "required": false },
+		"minecraft:spawner",
+		"minecraft:bedrock"
+	]
+}
