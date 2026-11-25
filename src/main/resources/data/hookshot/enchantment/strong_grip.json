@@ -1,0 +1,20 @@
+{
+	"anvil_cost": 4,
+	"description": {
+		"translate": "enchantment.hookshot.strong_grip"
+	},
+	"max_cost": {
+		"base": 62,
+		"per_level_above_first": 15
+	},
+	"max_level": 2,
+	"min_cost": {
+		"base": 12,
+		"per_level_above_first": 15
+	},
+	"slots": [
+		"hand"
+	],
+	"supported_items": "#hookshot:enchantable/hookshot",
+	"weight": 2
+}

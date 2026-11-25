@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "equipment",
+	"pattern": [
+		" XT",
+		"CDX",
+		"IC "
+	],
+	"key": {
+		"T": "minecraft:tripwire_hook",
+		"X": "minecraft:netherite_scrap",
+		"D": "minecraft:diamond",
+		"C": "minecraft:iron_chain",
+		"I": "minecraft:iron_ingot"
+	},
+	"result": { "id": "hookshot:hookshot" }
+}

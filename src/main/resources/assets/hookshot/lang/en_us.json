@@ -1,0 +1,19 @@
+{
+	"item.hookshot.hookshot": "Hookshot",
+	"item.hookshot.hook_head": "Hookshot Hook",
+	"item.hookshot.chain_link": "Hookshot Chain",
+	"entity.hookshot.hook": "Hookshot Hook",
+	"message.hookshot.mode.fetch": "Hookshot: Fetch mode (pulls things to you)",
+	"message.hookshot.mode.travel": "Hookshot: Travel mode (pulls you to the hook)",
+	"item.hookshot.boomerang": "Boomerang",
+	"entity.hookshot.boomerang": "Boomerang",
+	"enchantment.hookshot.reach": "Reach",
+	"enchantment.hookshot.quick_draw": "Quick Draw",
+	"enchantment.hookshot.strong_grip": "Strong Grip",
+	"enchantment.hookshot.silk_grip": "Silk Grip",
+	"enchantment.hookshot.ricochet": "Ricochet",
+	"enchantment.hookshot.long_throw": "Long Throw",
+	"enchantment.hookshot.keen_edge": "Keen Edge",
+	"enchantment.hookshot.blazing": "Blazing",
+	"enchantment.hookshot.stunning": "Stunning"
+}

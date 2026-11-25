@@ -1,0 +1,12 @@
+{
+	"replace": false,
+	"values": [
+		"hookshot:reach",
+		"hookshot:quick_draw",
+		"hookshot:strong_grip",
+		"hookshot:long_throw",
+		"hookshot:keen_edge",
+		"hookshot:blazing",
+		"hookshot:stunning"
+	]
+}
